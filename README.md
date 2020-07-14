@@ -1,1 +1,1 @@
-PHP `7.4` meta package
+PHP `8.0` meta package

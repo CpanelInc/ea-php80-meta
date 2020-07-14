@@ -5,16 +5,16 @@
 %global _scl_prefix %{ns_dir}
 %global scl_name_base    %{ns_name}-php
 %global scl_macro_base   %{ns_name}_php
-%global scl_name_version 74
+%global scl_name_version 80
 %global scl              %{scl_name_base}%{scl_name_version}
 %scl_package %scl
 
 # do not produce empty debuginfo package
 %global debug_package %{nil}
 
-Summary:       Package that installs PHP 7.4
+Summary:       Package that installs PHP 8.0
 Name:          %scl_name
-Version:       7.4.7
+Version:       8.0.0
 Vendor:        cPanel, Inc.
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
 %define        release_prefix 1
@@ -41,7 +41,7 @@ Requires:      %{?scl_prefix}pear
 
 %description
 This is the main package for %scl Software Collection,
-that install PHP 7.4 language.
+that install PHP 8.0 language.
 
 
 %package runtime
@@ -116,14 +116,14 @@ help2man -N --section 7 ./h2m_helper -o %{scl_name}.7
 install -D -m 644 enable %{buildroot}%{_scl_scripts}/enable
 install -D -m 644 scldev %{buildroot}%{_root_sysconfdir}/rpm/macros.%{scl_name_base}-scldevel
 install -D -m 644 %{scl_name}.7 %{buildroot}%{_mandir}/man7/%{scl_name}.7
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/etc
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/share/doc
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/include
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/share/man/man1
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/bin
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/var/cache
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/var/tmp
-mkdir -p %{buildroot}/opt/cpanel/ea-php74/root/usr/%{_lib}
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/etc
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/share/doc
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/include
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/share/man/man1
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/bin
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/var/cache
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/var/tmp
+mkdir -p %{buildroot}/opt/cpanel/ea-php80/root/usr/%{_lib}
 mkdir -p %{buildroot}/usr/local/cpanel/whostmgr/addonfeatures
 install %{SOURCE3} %{buildroot}/usr/local/cpanel/whostmgr/addonfeatures/%{name}
 
@@ -155,17 +155,17 @@ mkdir -p %{buildroot}/opt/cpanel/%{scl}/root/usr/share/locale
 %doc README LICENSE
 %scl_files
 %{_mandir}/man7/%{scl_name}.*
-%dir /opt/cpanel/ea-php74/root/etc
-%dir /opt/cpanel/ea-php74/root/usr
-%dir /opt/cpanel/ea-php74/root/usr/share
-%dir /opt/cpanel/ea-php74/root/usr/share/doc
-%dir /opt/cpanel/ea-php74/root/usr/include
-%dir /opt/cpanel/ea-php74/root/usr/share/man
-%dir /opt/cpanel/ea-php74/root/usr/bin
-%dir /opt/cpanel/ea-php74/root/usr/var
-%dir /opt/cpanel/ea-php74/root/usr/var/cache
-%dir /opt/cpanel/ea-php74/root/usr/var/tmp
-%dir /opt/cpanel/ea-php74/root/usr/%{_lib}
+%dir /opt/cpanel/ea-php80/root/etc
+%dir /opt/cpanel/ea-php80/root/usr
+%dir /opt/cpanel/ea-php80/root/usr/share
+%dir /opt/cpanel/ea-php80/root/usr/share/doc
+%dir /opt/cpanel/ea-php80/root/usr/include
+%dir /opt/cpanel/ea-php80/root/usr/share/man
+%dir /opt/cpanel/ea-php80/root/usr/bin
+%dir /opt/cpanel/ea-php80/root/usr/var
+%dir /opt/cpanel/ea-php80/root/usr/var/cache
+%dir /opt/cpanel/ea-php80/root/usr/var/tmp
+%dir /opt/cpanel/ea-php80/root/usr/%{_lib}
 %attr(644, root, root) /usr/local/cpanel/whostmgr/addonfeatures/%{name}
 %if 0%{?_licensedir:1}
 %dir %{_licensedir}
@@ -180,22 +180,6 @@ mkdir -p %{buildroot}/opt/cpanel/%{scl}/root/usr/share/locale
 %defattr(-,root,root)
 %{_root_sysconfdir}/rpm/macros.%{scl_name_base}-scldevel
 
-
 %changelog
-* Fri Jun 12 2020 Cory McIntire <cory@cpanel.net> - 7.4.7-1
-- EA-9109: Update ea-php74 from v7.4.6 to v7.4.7
-
-* Thu May 14 2020 Cory McIntire <cory@cpanel.net> - 7.4.6-1
-- EA-9070: Update ea-php74 from v7.4.5 to v7.4.6
-
-* Thu Apr 23 2020 Daniel Muey <dan@cpanel.net> - 7.4.5-2
-- ZC-6611: Do not package empty share directories
-
-* Thu Apr 16 2020 Cory McIntire <cory@cpanel.net> - 7.4.5-1
-- EA-9007: Update ea-php74 from v7.4.2 to v7.4.5
-
-* Wed Feb 05 2020 Daniel Muey <dan@cpanel.net> - 7.4.2-1
-- EA-8867: Update ea-php74 from v7.4.1 to v7.4.2
-
-* Tue Dec 24 2019 Daniel Muey <dan@cpanel.net> - 7.4.1-1
-- ZC-5848: Initial packaging
+* Tue Jul 14 2020 Daniel Muey <dan@cpanel.net> - 8.0.0-1
+- ZC-7164: Initial packaging
