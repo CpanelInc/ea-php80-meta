@@ -37,7 +37,9 @@ Requires:      %{?scl_prefix}php-common
 Requires:      %{?scl_prefix}php-cli
 
 # Our code requires that pear be installed when the meta package is installed
-Requires:      %{?scl_prefix}pear
+# Blocked by: ZC-7202, when scl-php-pear is updated for php8, we can add it
+# back
+#Requires:      %{?scl_prefix}pear
 
 %description
 This is the main package for %scl Software Collection,
