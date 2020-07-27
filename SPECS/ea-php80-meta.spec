@@ -14,7 +14,7 @@
 
 Summary:       Package that installs PHP 8.0
 Name:          %scl_name
-Version:       8.0.0alpha2
+Version:       8.0.0alpha3
 Vendor:        cPanel, Inc.
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
 %define        release_prefix 1
@@ -37,9 +37,7 @@ Requires:      %{?scl_prefix}php-common
 Requires:      %{?scl_prefix}php-cli
 
 # Our code requires that pear be installed when the meta package is installed
-# Blocked by: ZC-7202, when scl-php-pear is updated for php8, we can add it
-# back
-#Requires:      %{?scl_prefix}pear
+Requires:      %{?scl_prefix}pear
 
 %description
 This is the main package for %scl Software Collection,
@@ -183,5 +181,8 @@ mkdir -p %{buildroot}/opt/cpanel/%{scl}/root/usr/share/locale
 %{_root_sysconfdir}/rpm/macros.%{scl_name_base}-scldevel
 
 %changelog
+* Mon Jul 27 2020 Julian Brown <julian.brown@cpanel.net> - 8.0.0alpha3-1
+- ZC-7203: Revert blocking php-pear, and indicate we are using alpha3 now.
+
 * Tue Jul 14 2020 Daniel Muey <dan@cpanel.net> - 8.0.0alpha2-1
 - ZC-7164: Initial packaging
