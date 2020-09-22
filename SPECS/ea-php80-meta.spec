@@ -14,7 +14,7 @@
 
 Summary:       Package that installs PHP 8.0
 Name:          %scl_name
-Version:       8.0.0alpha3
+Version:       8.0.0beta4
 Vendor:        cPanel, Inc.
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
 %define        release_prefix 1
@@ -181,6 +181,9 @@ mkdir -p %{buildroot}/opt/cpanel/%{scl}/root/usr/share/locale
 %{_root_sysconfdir}/rpm/macros.%{scl_name_base}-scldevel
 
 %changelog
+* Tue Sep 22 2020 Daniel Muey <dan@cpanel.net> - 8.0.0beta4-1
+- ZC-7523: Update to beta 4
+
 * Mon Jul 27 2020 Julian Brown <julian.brown@cpanel.net> - 8.0.0alpha3-1
 - ZC-7203: Revert blocking php-pear, and indicate we are using alpha3 now.
 
