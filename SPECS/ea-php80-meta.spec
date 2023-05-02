@@ -9,9 +9,6 @@
 %global scl              %{scl_name_base}%{scl_name_version}
 %scl_package %scl
 
-# do not produce empty debuginfo package
-%global debug_package %{nil}
-
 Summary:       Package that installs PHP 8.0
 Name:          %scl_name
 Version:       8.0.28
