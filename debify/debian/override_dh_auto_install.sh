@@ -152,7 +152,8 @@ mkdir -p $DEB_INSTALL_ROOT/usr/local/cpanel/whostmgr/addonfeatures
 
 install $SOURCE3 $DEB_INSTALL_ROOT/usr/local/cpanel/whostmgr/addonfeatures/$name
 
-cp ./LICENSE $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/doc/ea-php80-runtime-$version
+mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/doc/ea-php80-runtime
+cp ./LICENSE $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/doc/ea-php80-runtime
 
 echo "FILELIST"
 echo `pwd`
