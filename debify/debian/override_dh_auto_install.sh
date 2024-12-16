@@ -100,7 +100,7 @@ mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/backgrounds
 mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/desktop-directories
 mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/dict
 mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/doc
-mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/doc/ea-php80-runtime-$version
+mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/doc/ea-php80-runtime
 mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/empty
 mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/games
 mkdir -p $DEB_INSTALL_ROOT/opt/cpanel/ea-php80/root/usr/share/ghostscript/conf.d
