@@ -14,7 +14,7 @@ Name:          %scl_name
 Version:       8.0.30
 Vendor:        cPanel, Inc.
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4590 for more details
-%define        release_prefix 2
+%define        release_prefix 3
 Release:       %{release_prefix}%{?dist}.cpanel
 Group:         Development/Languages
 License:       GPLv2+
@@ -178,6 +178,9 @@ mkdir -p %{buildroot}/opt/cpanel/%{scl}/root/usr/share/locale
 %{_root_sysconfdir}/rpm/macros.%{scl_name_base}-scldevel
 
 %changelog
+* Mon Dec 16 2024 Dan Muey <daniel.muey@webpros.com> - 8.0.30-3
+- ZC-12441: Address deb’s versioned-dir situation
+
 * Tue Nov 28 2023 Julian Brown <julian.brown@cpanel.net> - 8.0.30-2
 - ZC-11419: Correct Ubuntu build issues
 
